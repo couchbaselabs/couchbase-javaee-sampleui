@@ -8,7 +8,23 @@
 <f:view>
     <h:form id="search">
         What airline do you seek?: <h:inputText id="airline"/><br/>
-        You found: <h:outputText value="#{travelRepo.findFirstAirlineByName(param['search:airline'])}"/>
+        You found: <h:outputText value="#{travelRepo.findFirstAirlineByName(param['search:airline'])}"/><br/>
+        Airports:<br/>
+        <h:dataTable value="#{travelRepo.findAirportsForAirline(param['search:airline'])}" var="airport">
+            <h:column>
+                <f:facet name="header">FAA ID</f:facet>
+                #{airport.faa}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Name</f:facet>
+                #{airport.name}
+            </h:column>
+            <h:column>
+                <f:facet name="header">City</f:facet>
+                #{airport.city}
+            </h:column>
+        </h:dataTable>
+
     </h:form>
 </f:view>
 </html>
