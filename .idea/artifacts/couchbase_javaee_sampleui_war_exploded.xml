@@ -7,6 +7,9 @@
         <element id="directory" name="classes">
           <element id="module-output" name="couchbase-javaee-sampleui" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="application" name="couchbase-javaee-sample" />
+        </element>
       </element>
     </root>
   </artifact>

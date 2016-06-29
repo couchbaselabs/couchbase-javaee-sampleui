@@ -6,8 +6,9 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
-    <h:outputLabel value="What airline do you seek?"/><br/>
-    <h:inputText value=""/>
-    <h:button value="Search"/>
+    <h:form id="search">
+        What airline do you seek?: <h:inputText id="airline"/><br/>
+        You found: <h:outputText value="#{travelRepo.findFirstAirlineByName(param['search:airline'])}"/>
+    </h:form>
 </f:view>
 </html>
